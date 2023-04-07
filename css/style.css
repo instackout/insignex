@@ -473,3 +473,8 @@
     padding-right: 0;
     border-right: none;
 }
+
+/* added */
+.w-max-content {
+    width: max-content !important;
+}
