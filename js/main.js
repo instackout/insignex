@@ -2,7 +2,7 @@
     "use strict";
 
     // redirect to index page
-    if (window.location.pathname == '/' && window.location.href.indexOf('?no_redirect') == -1) {
+    if (!(window.location.pathname).includes('.html') && window.location.href.indexOf('?no_redirect') == -1) {
         window.location.replace('/index.html');
     }
 

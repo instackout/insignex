@@ -2,8 +2,7 @@ $(function () {
     $('head').load('common/head.html');
     $('#header').load('common/header.html', function () {
         let url = window.location.pathname;
-        console.log(url);
-        url = url == '/' ? '/' : url.split('/').join('');
+        url = url.substring(url.lastIndexOf('/') + 1);
 
         $('.nav-link').removeClass('active');
         $('.nav-link[href="' + url + '"]').addClass('active');
