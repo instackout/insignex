@@ -9,17 +9,7 @@
         } else {
             window.location.replace('/index.html');
         }
-    }
-
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    
+    }    
     
     // Initiate the wowjs
     new WOW().init();
@@ -98,8 +88,6 @@
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
         })
-
-        spinner();
     });
 
 
