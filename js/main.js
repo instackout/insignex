@@ -19,7 +19,6 @@
             }
         }, 1);
     };
-    spinner();
     
     
     // Initiate the wowjs
@@ -99,6 +98,8 @@
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
         })
+
+        spinner();
     });
 
 
