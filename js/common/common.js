@@ -19,9 +19,6 @@ $(function () {
     });
     $('#footer').load('common/footer.html', function () {
         $('#currYear').html(new Date().getFullYear());
+        spinner();
     });
-});
-
-$(window).on('load', function() {
-    spinner();
 });
