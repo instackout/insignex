@@ -1,6 +1,11 @@
 (function ($) {
     "use strict";
 
+    // redirect to index page
+    if (window.location.pathname == '/') {
+        window.location.replace('/index.html');
+    }
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
