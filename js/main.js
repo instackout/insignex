@@ -3,7 +3,8 @@
 
     // redirect to index page
     if (!(window.location.pathname).includes('.html') && window.location.href.indexOf('?no_redirect') == -1) {
-        window.location.replace('/index.html');
+        let repo = window.location.pathname.split('/')[1];
+        window.location.replace('/' + repo + '/index.html');
     }
 
     // Spinner
