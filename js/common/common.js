@@ -15,6 +15,9 @@ $(function () {
         
             $(".nav-link").removeClass("active");        
             $('.nav-link[href="' + url + '"]').addClass("active");
+
+            $(".sub-nav-link").removeClass("active");        
+            $('.sub-nav-link[href="' + url + '"]').addClass("active");
         });
         $('#footer').load('common/footer.html', function () {
             $('#currYear').html(new Date().getFullYear());
