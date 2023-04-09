@@ -18,6 +18,10 @@ $(function () {
 
             $(".sub-nav-link").removeClass("active");        
             $('.sub-nav-link[href="' + url + '"]').addClass("active");
+
+            if ($('.sub-nav-link').hasClass('active')) {
+                $('#sub-nav').addClass("active");
+            }
         });
         $('#footer').load('common/footer.html', function () {
             $('#currYear').html(new Date().getFullYear());
