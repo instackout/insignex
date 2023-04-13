@@ -1,3 +1,8 @@
+// emailjs creds
+const publicKey = 'HTTfu57yow0WT_GJq';
+const serviceId = 'service_m8d5pzo';
+const templateId = 'template_rwtmb0m';
+
 // Spinner
 var spinner = function () {
     setTimeout(function () {
@@ -7,7 +12,34 @@ var spinner = function () {
     }, 1);
 };
 
+function subscribe() {
+    let spinner = $('#subscribeForm .spinner');
+    let submitbtn = $('#subscribeForm').find('button[type="submit"]');
+    let subscribeForm = $('#subscribeForm')[0];
+    let subscribeModal = $('#subscribeModal');
+
+    submitbtn.hide();
+    spinner.show();
+
+    emailjs.send(
+        serviceId, 
+        templateId,
+        { "email": $("#subscribe-email").val() }).then(function (response) {
+            subscribeModal.modal('show');
+            subscribeForm.reset();
+            submitbtn.show();
+            spinner.hide();
+        }, function (error) {
+            window.location.replace('/index.html');
+            subscribeForm.reset();
+            submitbtn.show();
+            spinner.hide();
+        });
+}
+
 $(function () {
+    emailjs.init(publicKey);
+
     $("#spinner").load("common/spinner.html", function () {
         $("#header").load("common/header.html", function () {
             let url = window.location.pathname;
