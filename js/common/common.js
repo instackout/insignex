@@ -1,7 +1,8 @@
 // emailjs creds
 const publicKey = 'HTTfu57yow0WT_GJq';
 const serviceId = 'service_m8d5pzo';
-const templateId = 'template_rwtmb0m';
+const subscribeTemplateId = 'template_rwtmb0m';
+const contactUsTemplateId = 'template_quggd4a';
 
 // Spinner
 var spinner = function () {
@@ -23,7 +24,7 @@ function subscribe() {
 
     emailjs.send(
         serviceId, 
-        templateId,
+        subscribeTemplateId,
         { "email": $("#subscribe-email").val() }).then(function (response) {
             subscribeModal.modal('show');
             subscribeForm.reset();
@@ -32,6 +33,35 @@ function subscribe() {
         }, function (error) {
             window.location.replace('/index.html');
             subscribeForm.reset();
+            submitbtn.show();
+            spinner.hide();
+        });
+}
+
+function contactUs() {
+    let spinner = $('#contactUsForm .spinner');
+    let submitbtn = $('#contactUsForm').find('button[type="submit"]');
+    let contactUsForm = $('#contactUsForm')[0];
+    let contactUsModal = $('#contactUsModal');
+
+    submitbtn.hide();
+    spinner.show();
+
+    emailjs.send(
+        serviceId, 
+        contactUsTemplateId,
+        { 
+            "name": $("#contactUs-name").val(),
+            "email": $("#contactUs-email").val(),
+            "message": $("#contactUs-message").val()
+        }).then(function (response) {
+            contactUsModal.modal('show');
+            contactUsForm.reset();
+            submitbtn.show();
+            spinner.hide();
+        }, function (error) {
+            window.location.replace('/index.html');
+            contactUsForm.reset();
             submitbtn.show();
             spinner.hide();
         });
