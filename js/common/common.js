@@ -67,6 +67,37 @@ function contactUs() {
         });
 }
 
+function contactUs2() {
+    let spinner = $('#contactUs2Form .spinner');
+    let submitbtn = $('#contactUs2Form').find('button[type="submit"]');
+    let contactUs2Form = $('#contactUs2Form')[0];
+    let contactUsModal = $('#contactUsModal');
+
+    submitbtn.hide();
+    spinner.show();
+
+    emailjs.send(
+        serviceId, 
+        contactUsTemplateId,
+        {
+            "name": $("#contactUs2-name").val(),
+            "email": $("#contactUs2-email").val(),
+            "subject": $("#contactUs2-subject").val(),
+            "contact": $("#contactUs2-contact").val(),
+            "message": $("#contactUs2-message").val()
+        }).then(function (response) {
+            contactUsModal.modal('show');
+            contactUs2Form.reset();
+            submitbtn.show();
+            spinner.hide();
+        }, function (error) {
+            window.location.replace('/index.html');
+            contactUs2Form.reset();
+            submitbtn.show();
+            spinner.hide();
+        });
+}
+
 $(function () {
     emailjs.init(publicKey);
 
