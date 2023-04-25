@@ -559,3 +559,8 @@
 .text-justify {
     text-align: justify;
 }
+
+.sub-nav-link:hover {
+    color: var(--light);
+    background-color: var(--primary);
+}
