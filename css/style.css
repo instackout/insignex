@@ -555,3 +555,7 @@
 .fw-normal {
     font-weight: normal !important;
 }
+
+.text-justify {
+    text-align: justify;
+}
