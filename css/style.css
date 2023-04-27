@@ -564,3 +564,7 @@
     color: var(--light);
     background-color: var(--primary);
 }
+
+.h-350 {
+    height: 350px;
+}
