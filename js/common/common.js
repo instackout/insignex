@@ -1,8 +1,8 @@
 // emailjs creds
-const publicKey = 'HTTfu57yow0WT_GJq';
-const serviceId = 'service_m8d5pzo';
-const subscribeTemplateId = 'template_rwtmb0m';
-const contactUsTemplateId = 'template_quggd4a';
+const publicKey = 'TwQ_uS-J9uHaHDx2M';
+const serviceId = 'service_xbwjf6s';
+const subscribeTemplateId = 'template_otsannq';
+const contactUsTemplateId = 'template_hysbsb8';
 
 // Spinner
 var spinner = function () {
@@ -53,6 +53,8 @@ function contactUs() {
         { 
             "name": $("#contactUs-name").val(),
             "email": $("#contactUs-email").val(),
+            "subject": '',
+            "contact": '',
             "message": $("#contactUs-message").val()
         }).then(function (response) {
             contactUsModal.modal('show');
